@@ -3,7 +3,6 @@ set -g fish_greeting
 
 ## Env variables
 set -gx EDITOR "nvim"
-set -gx GTK_THEME "Adwaita:dark"
 set -gx QT_QPA_PLATFORMTHEME "qt5ct"
 set -gx VISUAL "textadept"
 set -gx XDG_CURRENT_DESKTOP "i3"
