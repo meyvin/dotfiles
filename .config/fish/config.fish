@@ -9,9 +9,14 @@ set -gx XDG_CURRENT_DESKTOP "i3"
 set -gx XDG_SESSION_DESKTOP "i3"
 set -gx XDG_SESSION_TYPE "x11"
 
+## Theming
+set -gx GTK_THEME "Adwaita:dark"
+set -gx GTK2_RC_FILES "/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc"
+set -gx QT_STYLE_OVERRIDE "adwaita-dark"
+
 ### Paths
 fish_add_path /var/lib/flatpak/exports/share
-fish_add_path /var/lib/flatpak/exports/bin
+fish_add_path $HOME/.local/share/flatpak/exports/share
 fish_add_path /var/lib/snapd/desktop/applications/
 fish_add_path ~/.config/composer/vendor/bin
 fish_add_path ~/.local/bin
