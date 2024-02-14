@@ -22,7 +22,8 @@ font pango:LigaSauceCodePro Nerd Font 10
 
 ### Autostart
 exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xautolock -time 15 -locker 'systemctl suspend' -notify 600 -notifier 'i3lock | xset dpms force off' &
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --set-auto $HOME/Pictures/Wallpapers/65861be4a6d2d625116bf543_retro-futuristic-10.jpg
 exec --no-startup-id thunderbird
@@ -38,14 +39,12 @@ assign [class="Spotify"] $ws5
 assign [class="lutris"] $ws6
 
 ### Floating windows
-for_window [class="Thunar"]            floating enable
+for_window [class="Lutris"]            floating enable, resize set 1920 1080, move position center
+for_window [class="Thunar"]            floating enable, resize set 1280 1024, move position center
 for_window [window_role="app"]         floating enable
 for_window [window_role="pop-up"]      floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"]      floating enable
-
-for_window [class="Thunar"] resize set 1280 1024
-for_window [class="Thunar"] move position center
 
 ### Looks
 default_border pixel 1

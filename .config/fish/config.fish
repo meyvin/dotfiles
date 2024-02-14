@@ -9,6 +9,10 @@ set -gx XDG_CURRENT_DESKTOP "i3"
 set -gx XDG_SESSION_DESKTOP "i3"
 set -gx XDG_SESSION_TYPE "x11"
 
+## Nvidia Firefox
+set -gx NVD_BACKEND "direct"
+set -gx MOZ_DISABLE_RDD_SANDBOX "1"
+
 ## Theming
 set -gx GTK_THEME "Adwaita:dark"
 set -gx GTK2_RC_FILES "/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc"
