@@ -1,3 +1,6 @@
 [shell]
 args = ["-l", "-c", "tmux attach || tmux"]
 program = "/usr/bin/fish"
+
+[font]
+size = 8.5

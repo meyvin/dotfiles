@@ -2,9 +2,10 @@ color=#f3f4f5
 separator_block_width=15
 markup=none
 
-[ScreenLock]
-command=$SCRIPT_DIR/idle-inhibit
-interval=-1
+[battery-poly]
+command=$SCRIPT_DIR/battery-poly
+LABEL=BAT
+interval=5
 
 [volume-pipewire]
 command=$SCRIPT_DIR/volume-pipewire/volume-pipewire
