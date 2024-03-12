@@ -60,7 +60,12 @@ input "1267:12850:ELAN06A1:00_04F3:3232_Touchpad" {
 	tap enabled
 	natural_scroll enabled              
 	middle_emulation enabled
-}	
+}
+
+input type:keyboard {
+  xkb_options ctrl:nocaps
+}
+
 
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
@@ -84,9 +89,7 @@ floating_modifier $mod normal
 #
 # Screenshots
 #
-bindsym Print exec grim -g "$(slurp -o -r -c '#ff0000ff')" - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
-bindsym Control+Print exec swayshot window
-bindsym Shift+Control+Print exec swayshot region
+bindsym Print exec grim -g "$(slurp)" - | satty --filename - --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 
 #
 # Key Bindings for Brightness and Keyboard Backlight
@@ -211,6 +214,8 @@ assign {
 # Auto float apps
 for_window {
   [app_id="org.gnome.Calculator"] floating enable
+  [app_id="com.gabm.satty"] floating enable
+  [app_id="com.gabm.satty"] resize set 1280 1024
   [class="Anydesk"] floating enable
   [app_id="(?i)mpv"] floating enable
   [app_id="pavucontrol"] floating enable
@@ -238,6 +243,8 @@ for_window {
   [window_type="dialog"] floating enable
   [window_type="menu"] floating enable
   [instance="update_installer"] floating enable	
+  [class="^.*"] inhibit_idle fullscreen
+  [app_id="^.*"] inhibit_idle fullscreen
 }
 # Tag xwayland windows as such
 # for_window [shell="xwayland"] client.focused #ff79c6    #ff79c6    #ff79c6  #ff79c6    #ff79c6
